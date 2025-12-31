@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - M.Shukri Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Complete Dark Theme with Accurate Information */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header with Dark Theme */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 15px 5%;
+            background: rgba(10, 10, 10, 0.98);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff3333;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #cccccc;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .menu-toggle:hover {
+            color: #ff3333;
+        }
+        
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav a.active,
+        nav a:hover {
+            color: #ff3333;
+            transform: translateY(-2px);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff3333;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .education-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), url('img/shukri.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 51, 51, 0.1), transparent);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.6rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+        }
+        
+        .kenya-flag {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 1.4rem;
+            animation: wave 3s infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+        
+        /* Education Content */
+        .education-content {
+            padding: 6rem 5% 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+        }
+        
+        .education-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 6rem;
+        }
+        
+        .education-intro h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            color: #ffffff;
+        }
+        
+        .education-intro h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #ff3333;
+        }
+        
+        .education-intro p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #aaaaaa;
+        }
+        
+        .dual-path {
+            background: rgba(255, 51, 51, 0.05);
+            border-left: 4px solid #ff3333;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .dual-path h3 {
+            color: #ff3333;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+        
+        .dual-path p {
+            font-size: 1.3rem;
+            color: #cccccc;
+        }
+        
+        /* Section Title */
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #ff3333;
+        }
+        
+        /* Formal Education Section - Updated Information */
+        .education-timeline {
+            max-width: 900px;
+            margin: 0 auto 6rem;
+        }
+        
+        .education-item {
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #ff3333;
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 51, 51, 0.2);
+            border-color: rgba(255, 51, 51, 0.3);
+        }
+        
+        .education-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .education-icon {
+            width: 5rem;
+            height: 5rem;
+            background: #ff3333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        
+        .education-info {
+            flex: 1;
+        }
+        
+        .education-info h3 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-info h4 {
+            font-size: 1.6rem;
+            color: #ff3333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .education-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            color: #cccccc;
+            font-size: 1.2rem;
+        }
+        
+        .education-meta i {
+            margin-right: 0.5rem;
+            color: #ff3333;
+        }
+        
+        .status-badge {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+            padding: 0.3rem 1rem;
+            border-radius: 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-left: 1rem;
+        }
+        
+        .upcoming-badge {
+            background: rgba(33, 150, 243, 0.2);
+            color: #2196F3;
+        }
+        
+        .education-description {
+            font-size: 1.4rem;
+            color: #aaaaaa;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .education-highlights h5 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .education-highlights ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .education-highlights li {
+            font-size: 1.3rem;
+            color: #cccccc;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .education-highlights li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #ff3333;
+        }
+        
+        .coursework h5 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .course-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .course-tag {
+            background: rgba(255, 51, 51, 0.1);
+            color: #ff3333;
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 51, 51, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .course-tag:hover {
+            background: rgba(255, 51, 51, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Tech Learning Journey */
+        .tech-journey {
+            margin-bottom: 6rem;
+        }
+        
+        .journey-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ff3333;
+        }
+        
+        .journey-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .journey-year {
+            width: 60px;
+            height: 60px;
+            background: #ff3333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+            z-index: 1;
+            flex-shrink: 0;
+            margin-right: 2rem;
+        }
+        
+        .journey-content {
+            flex: 1;
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .journey-content:hover {
+            transform: translateX(10px);
+            border-color: rgba(255, 51, 51, 0.3);
+        }
+        
+        .journey-content h3 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .journey-content p {
+            font-size: 1.3rem;
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+        
+        /* Self-Taught Learning */
+        .self-taught-learning {
+            margin-bottom: 6rem;
+        }
+        
+        .learning-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .learning-area {
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .learning-area:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 51, 51, 0.2);
+            border-color: rgba(255, 51, 51, 0.3);
+        }
+        
+        .learning-icon {
+            font-size: 2.5rem;
+            color: #ff3333;
+            margin-bottom: 1.5rem;
+        }
+        
+        .learning-area h3 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .learning-area p {
+            font-size: 1.3rem;
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+        
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 6rem;
+        }
+        
+        .certification-card {
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 51, 51, 0.2);
+            border-color: rgba(255, 51, 51, 0.3);
+        }
+        
+        .certification-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .certification-icon {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255, 51, 51, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff3333;
+            font-size: 2rem;
+        }
+        
+        .certification-info h3 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+        
+        .certification-info h4 {
+            font-size: 1.3rem;
+            color: #cccccc;
+            margin-bottom: 0.5rem;
+        }
+        
+        .certification-date {
+            font-size: 1.2rem;
+            color: #ff3333;
+            font-weight: 500;
+        }
+        
+        .certification-details p {
+            font-size: 1.3rem;
+            color: #aaaaaa;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .certification-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-tag {
+            background: rgba(255, 51, 51, 0.1);
+            color: #ff3333;
+            padding: 0.4rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 51, 51, 0.2);
+        }
+        
+        /* Learning Platforms */
+        .platforms-section {
+            margin-bottom: 6rem;
+        }
+        
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .platform-card {
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 51, 51, 0.2);
+            border-color: rgba(255, 51, 51, 0.3);
+        }
+        
+        .platform-icon {
+            font-size: 2.5rem;
+            color: #ff3333;
+            margin-bottom: 1.5rem;
+        }
+        
+        .platform-card h3 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .platform-card p {
+            font-size: 1.2rem;
+            color: #aaaaaa;
+        }
+        
+        /* Future Goals */
+        .future-goals {
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 3rem;
+            margin-bottom: 6rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .goals-icon {
+            font-size: 3rem;
+            color: #ff3333;
+            margin-bottom: 2rem;
+        }
+        
+        .future-goals h3 {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .goals-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .goal-item {
+            text-align: left;
+            padding: 1.5rem;
+            background: rgba(255, 51, 51, 0.05);
+            border-radius: 10px;
+        }
+        
+        .goal-item h4 {
+            font-size: 1.4rem;
+            color: #ff3333;
+            margin-bottom: 0.8rem;
+        }
+        
+        .goal-item p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .education-cta {
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.1), transparent);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            text-align: center;
+            border: 1px solid rgba(255, 51, 51, 0.2);
+            margin-top: 4rem;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .cta-content p {
+            font-size: 1.4rem;
+            color: #aaaaaa;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff3333;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ff3333;
+            color: #ff3333;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255, 51, 51, 0.1);
+        }
+        
+        /* Beautiful Footer */
+        footer {
+            background: #050505;
+            color: #e0e0e0;
+            padding: 60px 5% 30px;
+            margin-top: auto;
+            border-top: 1px solid #222;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-section {
+            padding: 10px;
+        }
+        
+        .footer-section h3 {
+            color: #ff3333;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: #ff3333;
+        }
+        
+        .footer-section p {
+            color: #aaaaaa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaaaaa;
+            text-decoration: none;
+            transition: color 0.3s, padding-left 0.3s;
+            display: block;
+        }
+        
+        .footer-links a:hover {
+            color: #ff3333;
+            padding-left: 10px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: #151515;
+            border-radius: 50%;
+            color: #cccccc;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background: #ff3333;
+            color: #ffffff;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3);
+        }
+        
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #aaaaaa;
+        }
+        
+        .footer-contact i {
+            color: #ff3333;
+            margin-top: 3px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background: #151515;
+            color: #cccccc;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .newsletter-form input:focus {
+            border-color: #ff3333;
+        }
+        
+        .newsletter-form button {
+            background: #ff3333;
+            color: #ffffff;
+            border: none;
+            padding: 0 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #222;
+            color: #777777;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #ff3333;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+            border: none;
+            box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 51, 51, 0.4);
+        }
+        
+        /* Responsive Media Queries */
+        @media screen and (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+            
+            .education-intro h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 15px 5%;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(15, 15, 15, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 15px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid #222;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .education-hero {
+                height: 50vh;
+                margin-top: 70px;
+            }
+            
+            .education-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .education-icon {
+                align-self: center;
+            }
+            
+            .education-meta {
+                justify-content: center;
+            }
+            
+            .journey-timeline::before {
+                left: 25px;
+            }
+            
+            .journey-year {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                margin-right: 1.5rem;
+            }
+            
+            .certifications-grid,
+            .learning-areas,
+            .platforms-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .education-item {
+                padding: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .education-hero {
+                height: 40vh;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .education-intro h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .education-info h3 {
+                font-size: 1.6rem;
+            }
+            
+            .education-info h4 {
+                font-size: 1.4rem;
+            }
+            
+            .education-description {
+                font-size: 1.2rem;
+            }
+            
+            .journey-timeline::before {
+                left: 20px;
+            }
+            
+            .journey-year {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                margin-right: 1rem;
+            }
+            
+            .journey-content {
+                padding: 1rem;
+            }
+            
+            .certification-card,
+            .learning-area,
+            .platform-card,
+            .future-goals {
+                padding: 1.5rem;
+            }
+            
+            .education-cta {
+                padding: 3rem 1.5rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-section {
+                padding: 0;
+            }
+            
+            .footer-social {
+                justify-content: center;
+            }
+            
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media screen and (max-width: 360px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .education-intro h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .education-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .course-tags,
+            .certification-skills {
+                justify-content: center;
+            }
+        }
+        
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #111111;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #ff3333;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">M.Shukri</a>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="experience.html">Experience</a>
+            <a href="education.html" class="active">Education</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="education-hero">
+        <div class="hero-content">
+            <h1>My Education Journey</h1>
+            <p>Combining Formal Education with Self-Taught Tech Skills <span class="kenya-flag">🇰🇪</span></p>
+        </div>
+    </section>
+
+    <section class="education-content">
+        <div class="education-intro">
+            <h2>Balancing Academia & Technology</h2>
+            <p>My educational path uniquely combines formal university studies in Public Administration and Political Science with intensive self-taught software engineering skills. This dual approach allows me to understand both governance systems and the technology that drives modern solutions.</p>
+            
+            <div class="dual-path">
+                <h3>Dual Learning Path</h3>
+                <p>I'm pursuing a university degree in Public Administration & Political Science while simultaneously mastering Full Stack Software Engineering through online platforms and practical projects. This combination gives me a unique perspective on how technology can solve real-world governance and societal challenges.</p>
+            </div>
+        </div>
+
+        <!-- Formal Education Section -->
+        <div class="education-section">
+            <h2 class="section-title">Formal Education</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="education-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="education-info">
+                            <h3>Public Administration & Political Science</h3>
+                            <h4>University of Nairobi, Kenya</h4>
+                            <div class="education-meta">
+                                <span class="education-period"><i class="fas fa-calendar"></i> Expected: 2024 - 2028</span>
+                                <span class="education-location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
+                                <span class="education-status"><i class="fas fa-clock"></i> Applied May 2024</span>
+                            </div>
+                            <span class="status-badge upcoming-badge">Starting Soon</span>
+                        </div>
+                    </div>
+                    <div class="education-details">
+                        <p class="education-description">Currently pursuing a Bachelor's degree in Public Administration and Political Science, focusing on governance, policy analysis, and public sector management. This program provides essential knowledge about government systems, public policy, and administrative processes.</p>
+                        <div class="education-highlights">
+                            <h5>Expected Learning Outcomes:</h5>
+                            <ul>
+                                <li>Understanding of public policy formulation and implementation</li>
+                                <li>Knowledge of political systems and governance structures</li>
+                                <li>Skills in public administration and management</li>
+                                <li>Analytical abilities for policy research and evaluation</li>
+                                <li>Understanding of international relations and diplomacy</li>
+                            </ul>
+                        </div>
+                        <div class="coursework">
+                            <h5>Core Subjects:</h5>
+                            <div class="course-tags">
+                                <span class="course-tag">Public Policy</span>
+                                <span class="course-tag">Political Theory</span>
+                                <span class="course-tag">Governance</span>
+                                <span class="course-tag">Administrative Law</span>
+                                <span class="course-tag">Public Finance</span>
+                                <span class="course-tag">International Relations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-info">
+                            <h3>Kenya Certificate of Secondary Education (KCSE)</h3>
+                            <h4>High School Diploma</h4>
+                            <div class="education-meta">
+                                <span class="education-period"><i class="fas fa-calendar"></i> 2019 - 2023</span>
+                                <span class="education-location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
+                                <span class="education-gpa"><i class="fas fa-star"></i> Completed 2023</span>
+                            </div>
+                            <span class="status-badge">Completed</span>
+                        </div>
+                    </div>
+                    <div class="education-details">
+                        <p class="education-description">Completed secondary education with strong performance in sciences and mathematics. Developed foundational analytical and problem-solving skills that formed the basis for my interest in both technology and governance.</p>
+                        <div class="education-highlights">
+                            <h5>Achievements & Activities:</h5>
+                            <ul>
+                                <li>Strong performance in Mathematics and Sciences</li>
+                                <li>Participation in school science clubs</li>
+                                <li>Developed early interest in technology and computers</li>
+                                <li>Participated in debate club, enhancing communication skills</li>
+                                <li>Volunteered in community service projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Learning Journey -->
+        <div class="tech-journey">
+            <h2 class="section-title">Tech Learning Timeline</h2>
+            <div class="journey-timeline">
+                <div class="journey-item">
+                    <div class="journey-year">2021</div>
+                    <div class="journey-content">
+                        <h3>Started Learning Web Development</h3>
+                        <p>Began my programming journey with HTML, CSS, and basic JavaScript through online tutorials and YouTube channels. Built my first simple websites and learned the fundamentals of web development.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-year">2022</div>
+                    <div class="journey-content">
+                        <h3>Advanced JavaScript & Frontend</h3>
+                        <p>Dived deeper into JavaScript, learned React.js, and mastered modern frontend development. Built interactive web applications and started contributing to small projects.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-year">2023</div>
+                    <div class="journey-content">
+                        <h3>Full Stack Development</h3>
+                        <p>Expanded to backend development with Node.js, Express.js, and databases (MongoDB, SQL). Completed the FreeCodeCamp curriculum and earned certifications in full stack development.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-year">2024</div>
+                    <div class="journey-content">
+                        <h3>Professional Development</h3>
+                        <p>Focused on building professional projects, learning cloud technologies (AWS, Azure), and developing soft skills. Started working on complex applications and collaborating with other developers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Self-Taught Learning Areas -->
+        <div class="self-taught-learning">
+            <h2 class="section-title">Self-Taught Tech Skills</h2>
+            <div class="learning-areas">
+                <div class="learning-area">
+                    <div class="learning-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <p>HTML5, CSS3, JavaScript (ES6+), React.js, Responsive Design, UI/UX Principles, Bootstrap, Tailwind CSS</p>
+                </div>
+
+                <div class="learning-area">
+                    <div class="learning-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Node.js, Express.js, REST APIs, MongoDB, PostgreSQL, Authentication, Server Deployment, API Design</p>
+                </div>
+
+                <div class="learning-area">
+                    <div class="learning-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Development Tools</h3>
+                    <p>Git & GitHub, VS Code, Postman, Docker Basics, Command Line, NPM/Yarn, Agile Methodologies</p>
+                </div>
+
+                <div class="learning-area">
+                    <div class="learning-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & Deployment</h3>
+                    <p>AWS Basics, Azure Fundamentals, Heroku, Netlify, Vercel, CI/CD Concepts, Server Management</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="certifications-section">
+            <h2 class="section-title">Professional Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3>Full Stack Web Development</h3>
+                            <h4>FreeCodeCamp</h4>
+                            <span class="certification-date">2023</span>
+                        </div>
+                    </div>
+                    <div class="certification-details">
+                        <p>Comprehensive certification covering HTML, CSS, JavaScript, React, Node.js, databases, and full stack development projects.</p>
+                        <div class="certification-skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3>Google IT Support Professional</h3>
+                            <h4>Google Career Certificates</h4>
+                            <span class="certification-date">2024</span>
+                        </div>
+                    </div>
+                    <div class="certification-details">
+                        <p>Fundamental IT support skills including troubleshooting, customer service, networking, operating systems, and security.</p>
+                        <div class="certification-skills">
+                            <span class="skill-tag">IT Support</span>
+                            <span class="skill-tag">Troubleshooting</span>
+                            <span class="skill-tag">Networking</span>
+                            <span class="skill-tag">System Admin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3>Microsoft Azure Fundamentals</h3>
+                            <h4>Microsoft Learn</h4>
+                            <span class="certification-date">2024</span>
+                        </div>
+                    </div>
+                    <div class="certification-details">
+                        <p>Foundational knowledge of cloud concepts, Azure services, security, privacy, pricing, and support.</p>
+                        <div class="certification-skills">
+                            <span class="skill-tag">Azure</span>
+                            <span class="skill-tag">Cloud Computing</span>
+                            <span class="skill-tag">Cloud Basics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Platforms -->
+        <div class="platforms-section">
+            <h2 class="section-title">Learning Platforms</h2>
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-free-code-camp"></i>
+                    </div>
+                    <h3>FreeCodeCamp</h3>
+                    <p>Primary platform for learning full stack web development through hands-on projects</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-udemy"></i>
+                    </div>
+                    <h3>Udemy</h3>
+                    <p>Practical courses for specific technologies and advanced programming concepts</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>YouTube</h3>
+                    <p>Tech tutorials, coding challenges, and staying updated with latest trends</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Coursera</h3>
+                    <p>University-level courses for foundational computer science knowledge</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Future Goals -->
+        <div class="future-goals">
+            <div class="goals-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Future Learning & Career Goals</h3>
+            <p>My unique combination of public administration studies and software engineering skills positions me for exciting opportunities at the intersection of technology and governance.</p>
+            
+            <div class="goals-list">
+                <div class="goal-item">
+                    <h4>Complete University Degree</h4>
+                    <p>Successfully complete my Bachelor's in Public Administration & Political Science (2024-2028)</p>
+                </div>
+                
+                <div class="goal-item">
+                    <h4>Advanced Tech Specialization</h4>
+                    <p>Master cloud computing, cybersecurity, and data science while maintaining full stack development skills</p>
+                </div>
+                
+                <div class="goal-item">
+                    <h4>Tech-Governance Integration</h4>
+                    <p>Apply technology solutions to public administration challenges and governance systems</p>
+                </div>
+                
+                <div class="goal-item">
+                    <h4>Professional Experience</h4>
+                    <p>Gain work experience in both tech companies and public sector organizations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="education-cta">
+            <div class="cta-content">
+                <h2>Bridging Technology & Governance</h2>
+                <p>My unique educational path combining public administration with software engineering gives me a special perspective on how technology can improve governance and public services. Let's discuss how I can contribute to your organization.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn">Contact Me</a>
+                    <a href="experience.html" class="btn btn-outline">View Experience</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beautiful Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>M.Shukri</h3>
+                <p>Kenyan student pursuing Public Administration & Political Science while mastering Full Stack Software Engineering. Passionate about using technology to solve governance and societal challenges.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nairobi, Kenya</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+254 725 942 450</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>mhassandiin@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Learning Newsletter</h3>
+                <p>Subscribe for insights on balancing formal education with tech learning, and updates on my journey.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear">2024</span> M.Shukri Portfolio. All rights reserved. | Kenyan Student & Developer 🇰🇪 | Designed with <i class="fas fa-heart" style="color: #ff3333;"></i></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    mainNav.classList.toggle('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (mainNav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = mainNav.contains(event.target);
+                const isClickOnMenuBtn = menuToggle.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickOnMenuBtn && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                
+                // Header scroll effect
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // Back to top button
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    if (emailInput.value) {
+                        alert('Thank you for subscribing! You\'ll receive updates about my unique journey combining public administration with software engineering.');
+                        emailInput.value = '';
+                    }
+                });
+            }
+            
+            // Fix for image loading error
+            const heroSection = document.querySelector('.education-hero');
+            const fallbackImageUrl = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
+            
+            // Check if image exists
+            const img = new Image();
+            img.src = 'img/shukri.jpg';
+            img.onerror = function() {
+                heroSection.style.background = `linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.8)), url('${fallbackImageUrl}') center/cover no-repeat`;
+            };
+            
+            // Update current year in footer
+            const currentYear = new Date().getFullYear();
+            document.getElementById('currentYear').textContent = currentYear;
+            
+            // Set active link based on current page
+            function setActiveLink() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const links = document.querySelectorAll('#mainNav a');
+                
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+            
+            setActiveLink();
+            
+            // Add animation to journey items
+            const journeyItems = document.querySelectorAll('.journey-item');
+            journeyItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 300 * index);
+            });
+            
+            // Add hover effect to learning areas
+            const learningAreas = document.querySelectorAll('.learning-area');
+            learningAreas.forEach(area => {
+                area.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                area.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add Kenya flag animation
+            const kenyaFlag = document.querySelector('.kenya-flag');
+            if (kenyaFlag) {
+                setInterval(() => {
+                    kenyaFlag.style.animation = 'none';
+                    setTimeout(() => {
+                        kenyaFlag.style.animation = 'wave 3s infinite';
+                    }, 10);
+                }, 6000);
+            }
+        });
+    </script>
+</body>
+</html>
